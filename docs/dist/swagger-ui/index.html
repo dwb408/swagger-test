@@ -19,7 +19,7 @@
   <script>
     window.onload = () => {
       window.ui = SwaggerUIBundle({
-        url: urls: [{name:'url1',url:new URL(location).searchParams.get('q') || 'swagger.json'},
+        urls: [{name:'url1',url:new URL(location).searchParams.get('q') || 'swagger.json'},
             {name:'url2',url:new URL(location).searchParams.get('q') || 'swagger2.json'}],
         deepLinking: true,
         dom_id: '#swagger-ui',
