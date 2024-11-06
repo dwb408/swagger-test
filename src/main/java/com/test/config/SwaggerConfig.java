@@ -11,6 +11,7 @@ public class SwaggerConfig {
 	@Bean
 	OpenAPI springShopOpenAPI() {
 		return new OpenAPI()
+				.openapi("3.0.0")
 				.info(new Info().title("Swaggerテスト API")
 				.description("Swagger API 3.0")
 				.version("1.0.0"));
