@@ -18,13 +18,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("test2")
-@Tag(name = "第二个测试接口")
+@Tag(name = "テストController", description="二番名テストController")
 public class Test2Controller {
 
-	@Operation(summary="Map类型测试接口", description = "Map类型测试接口描述")
-	@Parameters({@Parameter(name = "id", description = "用户ID", required = true),
-		@Parameter(name = "name", description = "用户名", required = false),
-		@Parameter(name = "dept", description = "部门", required = false)
+	@Operation(summary="Map型APIテスト", description = "Map型APIテストdescription")
+	@Parameters({@Parameter(name = "id", description = "ユーザーID,最大長さ:1000", required = true),
+		@Parameter(name = "name", description = "ユーザ名,最大長さ:50", required = false),
+		@Parameter(name = "dept", description = "部署名,最大長さ:50", required = false)
 	})
 	@ApiResponses({
 		@ApiResponse(responseCode = "200", description = "成功")

@@ -2,16 +2,16 @@ package com.test.bean;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-@Schema(name = "用户信息实体类")
+@Schema(name = "ユーザ情報Bean")
 public class TestUser {
 
-	@Schema(name = "用户ID")
+	@Schema(name = "ユーザーID",description="最大長さ:1000",defaultValue="1001")
 	private Integer id;
 
-	@Schema(name = "用户名")
+	@Schema(name = "ユーザー名",description="最大長さ:50", defaultValue="テストユーザー")
 	private String userName;
 
-	@Schema(name = "部门")
+	@Schema(name = "部署",description="最大長さ:50",defaultValue="テスト開発部")
 	private String dept;
 
 	public Integer getId() {

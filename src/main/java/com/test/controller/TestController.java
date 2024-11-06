@@ -15,27 +15,27 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "测试Controller", description = "测试接口的描述")
+@Tag(name = "テストController", description = "テストdescription")
 @RestController
 @RequestMapping("test")
 public class TestController {
 
-	@Operation(summary = "测试接口1", description = "无参Get测试接口")
-    @ApiResponse(responseCode = "200", description = "成功获取用户信息")
-    @ApiResponse(responseCode = "403", description = "用户未登录")
+	@Operation(summary = "テストGET", description = "GET方式でRequest")
+    @ApiResponse(responseCode = "200", description = "Request成功")
+    @ApiResponse(responseCode = "403", description = "登録情報なし或いは登録情報無効の場合")
 	@GetMapping("hello")
 	public String helloWorld() {
 		return "Hello World";
 	}
 
-	@Operation(summary = "测试接口2", description = "实体类参数")
-	@Parameters(@Parameter(name = "id", description = "用户ID", required = true))
+	@Operation(summary = "IDによってユーザー情報取得", description = "IDによってユーザー情報取得")
+	@Parameters(@Parameter(name = "id", description = "ユーザID,最大長さ:1000", required = true))
 	@ApiResponse(content = @Content(mediaType = "application/json", schema = @Schema(implementation = TestUser.class)))
 	@PostMapping("getUser")
 	public TestUser getUser(Integer id) {
 		TestUser user = new TestUser();
 		user.setId(id);
-		user.setUserName("测试用户" + id);
+		user.setUserName("テストユーザー" + id);
 		return user;
 	}
 	

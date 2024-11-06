@@ -10,12 +10,12 @@ springdoc:
   packages-to-scan: 
     - com.test #指定哪些包下的接口被扫描，如果不指定会将引入的所有接口扫描，包括依赖包如base包中的共通接口
   group-configs:
-    - group: 'test'
-      paths-to-match: '/test/**'
-      #生成文档所需的扫包路径，一般为启动类目录
-      #packages-to-scan: com.psdcd
-    - group: 'test2' 
-      paths-to-match: '/test2/**'
+#    - group: 'test'
+#      paths-to-match: '/test/**'
+#      #生成文档所需的扫包路径，一般为启动类目录
+#      #packages-to-scan: com.psdcd
+#    - group: 'test2' 
+#      paths-to-match: '/test2/**'
     - group: 'all'
       paths-to-match: '/test**/**'
 
