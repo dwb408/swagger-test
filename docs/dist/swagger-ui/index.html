@@ -19,12 +19,15 @@
   <script>
     window.onload = () => {
       window.ui = SwaggerUIBundle({
-        url: new URL(location).searchParams.get('q') || 'swagger.yml',
+        url: new URL(location).searchParams.get('q') || 'swagger.json',
         deepLinking: true,
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
           SwaggerUIStandalonePreset
+        ], 
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
         ],
         layout: "StandaloneLayout",
       });
