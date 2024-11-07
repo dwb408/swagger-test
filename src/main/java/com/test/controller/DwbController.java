@@ -31,6 +31,7 @@ public class DwbController {
 		return "Hello World";
 	}
 
+	@SuppressWarnings("null")
 	@Operation(summary = "dwb测试接口2", description = "实体类参数")
 	@Parameters(@Parameter(name = "id", description = "用户ID", required = true))
 	@ApiResponse(content = @Content(mediaType = "application/json", schema = @Schema(implementation = TestUser.class)))
