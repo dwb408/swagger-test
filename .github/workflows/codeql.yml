@@ -90,3 +90,8 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+    - name: Upload CodeQL database as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: hutool-code-database
+        path: /home/runner/work/_temp/codeql_databases/
