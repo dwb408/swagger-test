@@ -63,7 +63,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
-        queries: security-extended,security-and-quality,java-likely-bugs
+        # queries: security-extended,security-and-quality
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
@@ -90,6 +90,7 @@ jobs:
     - name: Perform CodeQL Analysis with Likely Bugs
       uses: github/codeql-action/analyze@v3
       with:
+        queries: security-and-quality
         category: "/language:${{matrix.language}}"
     # - name: Upload CodeQL database as artifact
     #   uses: actions/upload-artifact@v4
