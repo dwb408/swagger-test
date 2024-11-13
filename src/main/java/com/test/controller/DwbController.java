@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("dwbTest")
 public class DwbController {
-	
+
 	private static ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
 	@Operation(summary = "dwb测试接口1", description = "无参Get测试接口")
@@ -41,7 +41,7 @@ public class DwbController {
 			lock.writeLock().lock();
 			TestUser user = null;
 			user.setId(id);
-			user.setUserName("测试本地23" + id);
+			user.setUserName("测试远程2333" + id);
 			lock.writeLock().unlock();
 			return user;
 		} catch (Exception e) {
@@ -49,5 +49,5 @@ public class DwbController {
 		}
 		return null;
 	}
-	
+
 }
