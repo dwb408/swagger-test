@@ -41,7 +41,7 @@ public class DwbController {
 			lock.writeLock().lock();
 			TestUser user = null;
 			user.setId(id);
-			user.setUserName("测试远程2333" + id);
+			user.setUserName("测试本地123" + id);
 			lock.writeLock().unlock();
 			return user;
 		} catch (Exception e) {
