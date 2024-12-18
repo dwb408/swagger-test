@@ -102,4 +102,5 @@ jobs:
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
-        sarif_file: results.sarif  # 这是默认的分析结果文件名称，如果有修改需对应调整
+        name: codeql-sarif-results
+        path: results.sarif # 根据实际生成的SARIF文件路径修改
