@@ -104,4 +104,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v3
       with:
         name: codeql-sarif-results
-        path: results.sarif # 根据实际生成的SARIF文件路径修改
+        path: /home/runner/work/_temp/results.sarif # 根据实际生成的SARIF文件路径修改
