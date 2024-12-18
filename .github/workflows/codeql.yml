@@ -12,10 +12,11 @@
 name: "CodeQL Advanced"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
   # schedule:
   #   - cron: '41 6 * * 5'
 
@@ -98,3 +99,7 @@ jobs:
     #   with:
     #     name: hutool-code-database
     #     path: /home/runner/work/_temp/codeql_databases/
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results.sarif  # 这是默认的分析结果文件名称，如果有修改需对应调整
